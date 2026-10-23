@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevStart — Curso de Introdução ao Desenvolvimento Web</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Fonte Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- CABEÇALHO -->
+    <header class="navbar">
+      <div class="container nav-container">
+        <div class="logo"><span class="logo-bold">Dev</span>Start</div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#hero">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#contato">Inscrição</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- SEÇÃO HERO (SLOGAN + CTA) -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-content">
+        <span class="badge">Inscrições Abertas - T1/2026</span>
+        <h1 class="hero-title">
+          Aprenda Programação Web do Zero com Prática Real
+        </h1>
+        <p class="hero-slogan">
+          Domine HTML, CSS e JavaScript construindo projetos modernos e
+          alavanque sua carreira na tecnologia.
+        </p>
+        <button id="btn-cta" class="btn btn-primary">Inscreva-se Agora</button>
+      </div>
+    </section>
+
+    <!-- SEÇÃO SOBRE -->
+    <section id="sobre" class="about-section">
+      <div class="container">
+        <h2 class="section-title">Sobre o Curso</h2>
+        <p class="about-text">
+          O <strong>DevStart</strong> é uma imersão prática focada nos
+          fundamentos essenciais da Web. Você aprenderá a estruturar páginas
+          semânticas, estilizar layouts modernos com CSS Flexbox e Grid, além de
+          dar vida às suas aplicações consumindo APIs RESTful reais com
+          JavaScript puro.
+        </p>
+        <div class="features-grid">
+          <div class="feature-card">
+            <h3>HTML5 Semântico</h3>
+            <p>
+              Crie estruturas acessíveis, otimizadas para SEO e bem organizadas.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3>CSS3 & Flexbox</h3>
+            <p>
+              Desenvolva interfaces elegantes, responsivas e adaptáveis a
+              qualquer tela.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3>JavaScript & APIs</h3>
+            <p>
+              Adicione interatividade dinâmica e consuma web services modernos
+              na prática.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO CONTATO / INSCRIÇÃO COM VIACEP -->
+    <section id="contato" class="contact-section">
+      <div class="container">
+        <h2 class="section-title">Garanta sua Vaga</h2>
+        <p class="section-subtitle">
+          Preencha o formulário abaixo para confirmar sua pré-inscrição e
+          receber todas as informações.
+        </p>
+
+        <form id="form-inscricao" class="contact-form">
+          <div class="form-group">
+            <label for="nome">Nome Completo *</label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Seu nome completo"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="seuemail@exemplo.com"
+              required
+            />
+          </div>
+
+          <!-- CONSULTA VIACEP -->
+          <div class="form-row">
+            <div class="form-group col-cep">
+              <label for="cep">CEP *</label>
+              <input
+                type="text"
+                id="cep"
+                name="cep"
+                placeholder="62000-000"
+                maxlength="9"
+                required
+              />
+              <span id="cep-status" class="cep-hint"></span>
+            </div>
+
+            <div class="form-group col-estado">
+              <label for="uf">UF</label>
+              <input type="text" id="uf" name="uf" placeholder="CE" readonly />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="logradouro">Rua / Logradouro</label>
+            <input
+              type="text"
+              id="logradouro"
+              name="logradouro"
+              placeholder="Preenchido automaticamente pelo CEP"
+              readonly
+            />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="bairro">Bairro</label>
+              <input
+                type="text"
+                id="bairro"
+                name="bairro"
+                placeholder="Bairro"
+                readonly
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="cidade">Cidade</label>
+              <input
+                type="text"
+                id="cidade"
+                name="cidade"
+                placeholder="Cidade"
+                readonly
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="mensagem">Mensagem / Observações</label>
+            <textarea
+              id="mensagem"
+              name="mensagem"
+              rows="4"
+              placeholder="Conte um pouco sobre seu objetivo no curso..."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-block">
+            Confirmar Inscrição
+          </button>
+        </form>
+
+        <!-- MENSAGEM DE AGRADECIMENTO JS -->
+        <div id="mensagem-agradecimento" class="thank-you-box hidden">
+          <h3>🎉 Inscrição Realizada com Sucesso!</h3>
+          <p id="feedback-texto"></p>
+          <button id="btn-novo-cadastro" class="btn btn-secondary">
+            Realizar Nova Inscrição
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2026 DevStart. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
